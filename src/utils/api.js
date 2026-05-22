@@ -157,9 +157,9 @@ export const PLAYER_SOURCES = [
     lang: "RU",
     note: null,
     supportsProgress: false,
-    movieUrl: (id) => `https://player.autoembed.cc/embed/movie/${id}`,
+    movieUrl: (id) => `https://vaplayer.ru/embed/movie/${id}`,
     tvUrl: (id, season, ep) =>
-      `https://player.autoembed.cc/embed/tv/${id}/${season}/${ep}`,
+      `https://vaplayer.ru/embed/tv/${id}/${season}/${ep}`,
   },
   {
     id: "allmanga",
