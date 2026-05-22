@@ -1818,6 +1818,11 @@ export default function TVPage({
                             {src.tag}
                           </span>
                         )}
+                        {src.lang && (
+                          <span className="source-dropdown__lang">
+                            {src.lang}
+                          </span>
+                        )}
                         {src.note && (
                           <span className="source-dropdown__note">
                             {src.note}

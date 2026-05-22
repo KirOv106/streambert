@@ -1027,6 +1027,9 @@ export default function MoviePage({
                     {src.tag && (
                       <span className="source-dropdown__tag">{src.tag}</span>
                     )}
+                    {src.lang && (
+                      <span className="source-dropdown__lang">{src.lang}</span>
+                    )}
                     {src.note && (
                       <span className="source-dropdown__note">{src.note}</span>
                     )}

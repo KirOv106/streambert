@@ -151,6 +151,17 @@ export const PLAYER_SOURCES = [
       `https://www.2embed.online/embed/tv/${id}/${season}/${ep}`,
   },
   {
+    id: "rezka",
+    label: "Rezka",
+    tag: null,
+    lang: "RU",
+    note: null,
+    supportsProgress: false,
+    movieUrl: (id) => `https://voidboost.cc/embed/${id}`,
+    tvUrl: (id, season, ep) =>
+      `https://voidboost.cc/embed/${id}?s=${season}&e=${ep}`,
+  },
+  {
     id: "allmanga",
     label: "AllManga",
     tag: "ANIME",
