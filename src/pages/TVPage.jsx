@@ -1045,6 +1045,8 @@ export default function TVPage({
     const done = () => setWebviewLoading(false);
     wv.addEventListener("did-finish-load", done);
     wv.addEventListener("did-fail-load", done);
+    wv.addEventListener("did-stop-loading", done);
+    const fallback = setTimeout(done, 10000);
 
     // Poll up to 30s for video duration (metadata may load after buffering starts)
     let attempts = 0;
@@ -1069,6 +1071,8 @@ export default function TVPage({
     return () => {
       wv.removeEventListener("did-finish-load", done);
       wv.removeEventListener("did-fail-load", done);
+      wv.removeEventListener("did-stop-loading", done);
+      clearTimeout(fallback);
       clearInterval(pollDuration);
     };
   }, [playing, playerSource, item.id, selectedEp?.episode_number]);

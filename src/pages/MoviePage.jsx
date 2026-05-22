@@ -424,9 +424,13 @@ export default function MoviePage({
     const done = () => setWebviewLoading(false);
     wv.addEventListener("did-finish-load", done);
     wv.addEventListener("did-fail-load", done);
+    wv.addEventListener("did-stop-loading", done);
+    const fallback = setTimeout(done, 10000);
     return () => {
       wv.removeEventListener("did-finish-load", done);
       wv.removeEventListener("did-fail-load", done);
+      wv.removeEventListener("did-stop-loading", done);
+      clearTimeout(fallback);
     };
   }, [playing, playerSource, item.id]);
 
