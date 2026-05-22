@@ -157,9 +157,9 @@ export const PLAYER_SOURCES = [
     lang: "RU",
     note: null,
     supportsProgress: false,
-    movieUrl: (id) => `https://voidboost.cc/embed/${id}`,
+    movieUrl: (id) => `https://player.autoembed.cc/embed/movie/${id}`,
     tvUrl: (id, season, ep) =>
-      `https://voidboost.cc/embed/${id}?s=${season}&e=${ep}`,
+      `https://player.autoembed.cc/embed/tv/${id}/${season}/${ep}`,
   },
   {
     id: "allmanga",
